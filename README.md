@@ -12,4 +12,4 @@
 해결하지 못한 이슈는 stuck 처리한다. (자바봄) 
 
 ### 맛있는 읽을거리
-#### 이펙티브 자바(2022-March~)
+#### [이펙티브 자바(2022-March~)](https://github.com/JayFreemandev/ReadingRecord/tree/master/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94)
