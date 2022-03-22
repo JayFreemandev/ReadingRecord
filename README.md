@@ -1,14 +1,9 @@
 ## 글을 읽자
 주단위로 책을 정리한다.
-
 분량은 주당 책의 1장~2장도 괜찮으니 유동적으로 정한다.  
-
 한 주마다 리딩을 하는 사람 한명이 있고 그 외 멤버들은 책을 읽다가 모르는 점,  
-
 기록으로 남겨 두고 싶은 예제 등 자유로운 방식으로 이슈를 추가한다. 
-
 스터디 시간 전까지 리딩하는 사람은 해당 이슈에 답변을 달고 스터디 시간에 함께 살펴본다. 모두가 납득하면 close.  
-
 해결하지 못한 이슈는 stuck 처리한다. (자바봄) 
 
 ## 개요
@@ -92,7 +87,6 @@
 
 ### 클린코드
 
-- (**절판**) [리팩토링 | 코드 품질을 개선하는 객체지향 사고법](https://book.naver.com/bookdb/book_detail.nhn?bid=7047630) - 마틴 파울러
 - [리팩토링 | 코드 구조를 체계적으로 개선하여 효율적인 리팩터링 구현하기, 2판](https://book.naver.com/bookdb/book_detail.nhn?bid=16311029) - 마틴 파울러
 - [클린코드 | 클린 코드, 애자일 소프트웨어 장인 정신](https://book.naver.com/bookdb/book_detail.nhn?bid=7390287) - 로버트 C. 마틴
 - [클린코더 | 단순 기술자에서 진정한 소프트웨어 장인이 되기까지](https://book.naver.com/bookdb/book_detail.nhn?bid=10771065) - 로버트 C. 마틴
@@ -103,12 +97,10 @@
 - [오브젝트 | 코드로 이해하는 객체지향 설계](https://book.naver.com/bookdb/book_detail.nhn?bid=15007773) - 조영호
 - [객체지향의 사실과 오해 | 역할, 책임, 협력 관점에서 본 객체지향](https://book.naver.com/bookdb/book_detail.nhn?bid=9145968) - 조영호
 - [엘레강트 오브젝트 | 새로운 관점에서 바라본 객체지향](https://book.naver.com/bookdb/book_detail.nhn?bid=17651286) - 예고르 부가옌코 
-- [루비로 배우는 객체지향 디자인 | 지속가능한 소프트웨어를 만드는 방법](https://book.naver.com/bookdb/book_detail.nhn?bid=8401423) - 샌디 메츠
 
 ### 함수형 프로그래밍
 
 - [스칼라로 배우는 함수형 프로그래밍](https://book.naver.com/bookdb/book_detail.nhn?bid=8829454) - 폴 키우사노, 루나르 비아르드나손
-- [함수형 자바스크립트 프로그래밍](https://book.naver.com/bookdb/book_detail.nhn?bid=12800140) - 유인동
 - [함수형 사고 | 객체지향 개발자에서 함수형 개발자로 거듭나기](https://book.naver.com/bookdb/book_detail.nhn?bid=10741266) - 닐 포드
 
 ### 도메인 주도 설계
