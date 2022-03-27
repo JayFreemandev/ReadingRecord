@@ -1,223 +1,70 @@
-# Item6, 불필요한 객체 생성을 피하라 ing
-
-Date: March 22, 2022 → March 23, 2022
-
-![ITEM6.png](https://user-images.githubusercontent.com/72185011/160279398-e79f9dde-d295-4dc5-8f9b-10533f49ff7c.png)
-
-**불필요한 객체 생성을 피하면서 자원을 절약해야 한다.**
-
-같은 기능의 객체를 새로 생성하는 대신, 객체 하나를 재사용하는 편이 나을 때가 많다.
-
-특히, 불변 객체는 언제든 재사용할 수 있다.
-
-## 문자열 객체 생성
-
-### 같은 값임에도 다른 레퍼런스인 경우 - 기존의 인스턴스를 재사용 하자.
-
-```
-String s = new String("java");
-```
-
-String을 new로 생성하면 항상 새로운 객체를 만들게 된다. 
-
-아래와 같이 String 객체를 생성하는 것이 올바르다.
-
-```
-String s = "java";
-```
-
-이 코드는 새로운 인스턴스를 매번 만드는 대신 하나의 String 인스턴스를 재사용 한다.
-
-같은 가상 머신 안에서 이와 똑같은 문자열 리터럴을 사용하는 모든 코드가 같은 객체를 재사용함이 
-
-보장된다.cf) String pool의 플라이웨이트 패턴: 같은 내용의 String 객체가 선언된다면 기존의 객체를 
-
-참조하게 한다.
-
-**불변객체를 사용함으로서 얻는 이점이 메모리 걱정보다 더 크다고 오라클문서에 나와있다고 한다**
-
-## static factory 메서드 사용하기
-
-생성자대신 정적 팩터리 메서드를 제공하는 불변 클래스에서는 불필요한 객체 생성을 피할 수 있다.
-
-생성자는 호출할 때마다 새로운 객체를 만들지만, 팩터리 메서드는 그렇지않
-
-다.ex) `Boolean(String)` 생성자 대신 `Boolean.valueOf(String)` 팩터리 메서드 사용
-
-```
-Boolean true1 = Boolean.valueOf("true");
-Boolean true2 = Boolean.valueOf("true");
-
-System.out.println(true1 == true2); // true
-```
-
-## 무거운 객체
-
-만드는데 메모리나 시간이 오래 걸리는 객체 즉 "비싼 객체"를 반복적으로 만들어야 한다면 캐싱해
-
-두고 재사용할 수 있는지 고려하는 것이 좋다.
-
-### 재사용 빈도가 높고 생성비용이 비싼 경우 - 캐싱하여 재사용 하자.
-
-```
-static boolean isRomanNumeralSlow(String s) {
-    return s.matches("^(?=.)M*(C[MD]|D?C{0,3})"
-            + "(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$");
-}
-```
-
-이 코드의 문제점은 `String.matches` 메서드를 사용하는데 있다. `String.matches`는 정규표현식으로 
-
-문자열 형태를 확인하는 가장 쉬운 방법이지만, 성능이 중요한 상황에서 반복해 사용하기 적합하지 
-
-않다.
-
-이 메서드가 내부에서 만드는 정규 표현식용 `Pattern`인스턴스는 **한 번 쓰고 버려저서 곧바로 가비**
-
-**지 컬렉션 대상이 된다**.`Pattern`은 생성비용이 높은 클래스 중 하나이다. 만약 늘 같은 `Pattern`이 필
-
-요함이 보장되고 재사용 빈도가 높다면 아래와 같이 상수(`static final`)로 초기에 캐싱해놓고 재사
-
-용할 수 있다.
-
-```
-public class RomanNumerals {
-    private static final Pattern ROMAN = Pattern.compile(
-            "^(?=.)M*(C[MD]|D?C{0,3})"
-                    + "(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$");
-
-    static boolean isRomanNumeralFast(String s) {
-        return ROMAN.matcher(s).matches();
-    }
-}
-```
-
-성능을 개선하려면 필요한 정규표현식을 표현하는 (불변인) `Pattern` 인스턴스를 클래스 초기화(정
-
-적 초기화) 과정에서 직접 생성해 캐싱해두고, 나중에 `isRomanNumeral`이 호출될 때마다 이를 재사용한다.
-
-생성비용이 비싼 객체라면 "캐싱" 방식을 고려해야 한다.자주 쓰는 값이라면 `static final`로 초기
-
-에 캐싱해놓고 재사용 하자.
-
-## 어댑터
-
-불변 객체인 경우에 안정하게 재사용하는 것이 매우 명확하다. 하지만 몇몇 경우 분명하지 않다.어댑
-
-터를 예로 들면, 어댑터는 인터페이스를 통해 뒤에 있는 객체로 연결해주는 view라 여러 개 만들 필
-
-요가 없다.
-
-### 같은 인스턴스를 대변하는 여러 개의 인스턴스를 생성하지 말자
-
-```
-Map<String, Object> map = new HashMap<>();
-map.put("Hello", "World");
-
-Set<String> set1 = map.keySet();
-Set<String> set2 = map.keySet();
-
-assertThat(set1).isSameAs(set2); // TRUE
-
-set1.remove("Hello");
-System.out.println(set1.size()); // 1
-System.out.println(set1.size()); // 1
-```
-
-Map 인터페이스의 `keySet` 메서드는 Map 객체 안의 키 전부를 담은 `Set` 인터페이스의 뷰를 반환
-
-한다.하지만, 동일한 Map에서 호출하는 `keySet` 메서드는 같은 Map을 대변하기 때문에 반환한 객체 
-
-중 하나를 수정하면 다른 모든 객체가 따라서 바뀐다.따라서 `keySet`이 뷰 객체 여러 개를 만들 필요
-
-도 없고 이득도 없다.
-
-***
-
-이 부분에 관해서 백기선님의 이펙티브 자바 유튜브 강의를 봤다.
-
-그런데 백기선님은 견해가 달랐다.
-
-keySet 으로부터 받은 Set 인스턴스가 다른 곳에서도 사용중이고 심지어 상태값을
-
-변화시킨다면 현재 내가 사용중인 Set 인스턴스와 Map 인스턴스의 값에
-
-확신을 할 수 없다. 그렇기 때문에 매번 복사해서 새로운 객체를 반환하도록
-
-하는(item 50) 방어적 복사 방식을 선호한다고 했다.
-
-나도 백기선님의 견해에 동의한다. 상황에 따라 다르겠지만, 일반적으로
-
-Set 인터페이스가 매번 생성된다고 해도 성능에 치명적이지 않을 것 같다.
-
-오히려 Map 인스턴스와 Set 인스턴스를 Immutable하게 사용하는 것이
-
-유지보수 하는데 더 많은 이점을 가져다 줄 것 같다.
-
-([https://jithub.tistory.com/309](https://jithub.tistory.com/309)) 
+# Item5, 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라
 
 [https://www.youtube.com/watch?v=0yUxPUXS1pM&list=PLfI752FpVCS8e5ACdi5dpwLdlVkn0QgJJ&index=6](https://www.youtube.com/watch?v=0yUxPUXS1pM&list=PLfI752FpVCS8e5ACdi5dpwLdlVkn0QgJJ&index=6)
 
-## 오토박싱
+## 대부분의 클래스는 여러 리소스에 의존한다.
 
-### 의도치않은 오토박싱이 숨어들지 않도록 주의하자
+**사용하는 자원에 따라 동작이 달라지는 클래스**에는 ~정적 유틸리티 클래스~나 ~싱글턴 방식~이 적합하지 않다. 이 조건을 만족하는 간단한 패턴은, **인스턴스를 생성할 때 생성자에 필요한 자원을 넘겨주는 방식**이다.
 
-```
-private static long sum() {
-	Long sum = 0L;
-	for(long i=0; i<=Integer.MAX_VALUE; i++) {
-		sum += i;
-	}
-	return sum;
+### 정적 유틸리티
+
+```java
+public class SpellChecker {
+	private static final Lexicon dictionary = new LexiconDictionary();
+
+	private static boolean isValid(String word) { ... }
+	private SpeckChecker() { } // 객체 생성 방지
 }
 ```
 
-오토박싱은 기본 타입과 박싱된 기본 타입을 섞어 쓸 때 자동으로 상호 변환해주는 기술이다.
+인스턴스를 만들 필요가 없기 때문에 private한 생성자를 만들어주고 static 메소드들이 존재한다.
 
-의미상으로는 별다를 것 없지만 성능에서는 그렇지 않다.
+여기서 dictionary가 static final인 이유는 static method들이 사용해야하는 정적 유틸리티로 만들었
 
-`sum`변수를 `long`이 아닌 `Long`으로 사용해서 불필요한 `Long`인스턴스가 약 2의 31승이나 만들어
+기 때문이다.
 
-졌다.(`long` 타입인 `i`가 `Long` 타입인 `sum` 인스턴스에 더해질 때마다) Long으로 선언된 변수를 
+### 싱글턴
 
-long으로 바꾸면 훨씬 더 빠른 프로그램이 된다.
+```java
+public class SpellChecker {
+	private final Lexicon dictionary = new LexiconDictionary();
 
-**박싱된 기본 타입보다는 기본 타입을 사용하고, 의도치 않은 오토박싱이 숨어들지 않도록 주의하자.**
+	public static SpellChecker INSTANCE = new SpellChecker(...);
+	private SpellChecker(...) { }
 
-### 오해 금지
+	public boolean isValid(String word) { ... }
+}
+```
 
-**"객체 생성은 비싸니 피해야 한다"로 오해하면 안 된다.**
+위와 같은 경우 사전(dictionary)이 하나로 고정이 되기 때문에 좋은 방법이 아닙니다.
 
-특히나 요즘의 JVM에서는 별다른 일을 하지 않는 작은 객체를 생성하고 회수하는 일이 크게 부담되
+SpellChecker가 여러 종류의 사전을 사용할 수 있도록 하려면 final을 제거하고 dictionary를 변경하는 
 
-지 않는다.프로그램의 명확성, 간결성, 기능을 위해 객체를 추가로 생성하는 것이라면 일반적으로 좋
+메서드를 추가할 수 있지만, 오류를 내기 쉬우며 멀티스레드 환경에서는 쓸 수 없다. 사전만해도 지금
 
-은 일이다.
+은 LexiconDictionary 사전만 있지만 영어, 일본어, 중국어, 불어등 여러 사전이 추가되야할경우 문제
 
-그렇다고 단순히 객체 생성을 피하기 위해 자신만의 객체 풀(pool)을 만들지는 말자.DB 커넥션 같은 
+가 생긴다. 그렇다고 final 제거해버리면 위 설명처럼 멀티스레드때 사용할수가없다.
 
-경우 생성 비용이 워낙 비싸니 재사용 하는 편이 낫다.하지만 일반적으로 자체 객체 풀은 코드를 헷
+대신 인스턴스를 생성할 때 생성자에 필요한 자원을 넘겨주도록 하면 된다.
 
-갈리게 하고, 메모리 사용량을 늘리고, 성능을 떨어뜨린다.
+### 생성자 의존 객체 주입
 
-요즘 JVM의 GC는 상당히 잘 최적화 되어서, 가벼운 객체를 다룰 때는 직접 만든 객체 풀보다 훨씬 빠
+```java
+public class SpellChecker {
+	private final Lexicon dictionary;
 
-르다.
+	public SpellChecker(Lexicon dictionary) {
+		this.dictionary = Objects.requireNonNull(dictionary);
+	}
 
-특히 방어적 복사를 해야되는 상황에서 객체를 재사용하려고 강박적인 습관이 생기면 심각한 버그와 보안성에 문제가 생긴다. 객체를 생성해서 얻는 단점보다 더 크다. 배보다 배꼽이 커지는 경우가 없도록 하자.
+	public boolean isValid(String word) { ... }
+}
+```
 
-### 재사용 vs 방어적 복사
+1. 불변을 보장하기 때문에 여러 클라이언트가 의존 객체들을 안심하고 공유한다.
+2. 자원이 몇 개든 의존 관계가 어떻든 상관없이 작동한다.
 
-이번 아이템은 객체를 재사용할 것을 권장한다. 
+정적 유틸리티와 싱글턴의 단점을 보완하기에 유연성과 재사용성, 테스트에는 유리해진다.
 
-하지만 item 50은 방어적 복사를 통해 재사용을 지양한다.
-
-두개를 비교해본다면, 전자보다 후자가 훨씬 치명적이다.
-
-왜냐하면 성능 문제는 물론이고 동기화 관련한 이슈가 발생할 수 있고
-
-보안에 구멍이 뚫릴수도 있기 때문이다.
-
-가장 최선은 객체를 재사용할지, 방어적 복사를 통해 재사용을 안 할지 상황에 맞춰 '잘' 판단하는 것
-
-이다.
+의존성이 많아지면 코드가 어지러워지는 단점이 존재한다.
