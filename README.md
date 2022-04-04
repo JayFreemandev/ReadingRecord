@@ -1,10 +1,10 @@
-## 자바봄 처럼 글을 읽자
+## 개인 공부용 
 주단위로 책을 정리한다.
 분량은 주당 책의 1장~2장도 괜찮으니 유동적으로 정한다.  
 한 주마다 리딩을 하는 사람 한명이 있고 그 외 멤버들은 책을 읽다가 모르는 점,  
 기록으로 남겨 두고 싶은 예제 등 자유로운 방식으로 이슈를 추가한다.  
 스터디 시간 전까지 리딩하는 사람은 해당 이슈에 답변을 달고 스터디 시간에 함께 살펴본다. 모두가 납득하면 close.  
-해결하지 못한 이슈는 stuck 처리한다. 
+해결하지 못한 이슈는 stuck 처리한다. (자바봄)
 
 ## 개요 
 
@@ -118,7 +118,7 @@
 
 ### 자바
 
-- [이펙티브 자바(2022-March~)](https://github.com/JayFreemandev/ReadingRecord/tree/master/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94)
+- [이펙티브 자바(2022-March~)](https://github.com/JayFreemandev/ReadingRecord/tree/master/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94) - 조슈아 블로크
 - [모던 자바 인 액션 | 람다, 스트림, 함수형, 리액티브 프로그래밍으로 새로워진 자바 마스터하기](https://book.naver.com/bookdb/book_detail.nhn?bid=15261103) - 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트
 
 ### 스프링
