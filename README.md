@@ -1,9 +1,10 @@
-## 개인 공부용 
-모든 저작권은 해당 작가에게 존재합니다.
+## 개인 공부용
+[![Version](https://img.shields.io/badge/version-2022.3.1-red.svg)](./CHANGELOG)  [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/JayFreemandev/TIL)](https://hits.seeyoufarm.com/)  
+> * 모든 저작권은 해당 작가에게 존재합니다.
 
 ## 개요 
 
-📖 [국내 개발 도서 리스트](https://github.com/738/awesome-devbook)입니다.
+📖 [국내 개발 도서 리스트](https://github.com/738/awesome-devbook) 참고했습니다.
 
 > 인용문은 <소프트웨어 장인>에서 발췌했습니다.
 
