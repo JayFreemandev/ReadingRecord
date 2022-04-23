@@ -64,7 +64,7 @@ List를 사용해서 unsafeAdd라는 메소드를 호출하여 사용한다.
 컴파일 에러가 발생하지 않고 코드를 실행해야 strings.get(0); 에서 오류가 난다.
 
 ```jsx
-mport java.util.ArrayList;
+mport java.util.ArrayList; 
 import java.util.List;
 
 public class UnsafeAdd {
