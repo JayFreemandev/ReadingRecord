@@ -119,18 +119,18 @@
 ### 자바
 
 - [이펙티브 자바(2022-March~)](https://github.com/JayFreemandev/ReadingRecord/tree/master/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94) - 조슈아 블로크
-- [모던 자바 인 액션 | 람다, 스트림, 함수형, 리액티브 프로그래밍으로 새로워진 자바 마스터하기](https://book.naver.com/bookdb/book_detail.nhn?bid=15261103) - 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트
+- [모던 자바 인 액션](https://book.naver.com/bookdb/book_detail.nhn?bid=15261103) - 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트
 
 ### 스프링
 
-- [스프링5 레시피 | 스프링 애플리케이션 개발에 유용한 161가지 문제 해결 기법](https://book.naver.com/bookdb/book_detail.nhn?bid=13911953) - 마틴 데니엄, 다니엘 루비오, 조시 롱
+- [스프링5 레시피 | 스프링 애플리케이션 개발에 유용한 161가지 문제 해결 기법](https://book.naver.com/bookdb/book_detail.nhn?bid=13911953) - 마틴 데니엄, 다니엘 루비오
 - [스프링 인 액션(5판) | 스프링 5의 강력한 기능과 생산성을 활용한 웹 애플리케이션 개발](https://book.naver.com/bookdb/book_detail.nhn?bid=16348386) - 크레이그 월즈
 
 ### 데브옵스
 
 - [Kubernetes in Action | 그림과 상세한 설명을 통한 쿠버네티스 완벽 이해](https://book.naver.com/bookdb/book_detail.nhn?bid=14301229) - 마르코 룩샤
-- [데브옵스 핸드북 | 세계 최고 수준의 기민성, 신뢰성, 안정성을 갖춘 기술조직의 비밀](https://book.naver.com/bookdb/book_detail.nhn?bid=13735219) - 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스
+- [데브옵스 핸드북 | 최고 수준의 기민성, 신뢰성, 안정성을 갖춘 기술조직의 비밀](https://book.naver.com/bookdb/book_detail.nhn?bid=13735219) - 진 킴, 제즈 험블, 패트릭 드부아
 - [Kafka Streams in Action | 카프카 스트림즈 API로 만드는 실시간 애플리케이션](https://book.naver.com/bookdb/book_detail.nhn?bid=15073655) - 윌리엄 베젝
-- [애플리케이션 프로그래밍 with 자바(아파치 카프카) | 카프카의 개념부터 스트림즈, 커넥트, 스프링 카프카까지](https://book.naver.com/bookdb/book_detail.nhn?bid=18896970) - 최원영
+- [애플리케이션 프로그래밍 with 자바(아파치 카프카)](https://book.naver.com/bookdb/book_detail.nhn?bid=18896970) - 최원영
 
 **[⬆ 맨 위로 이동](#목차)**
