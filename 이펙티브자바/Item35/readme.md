@@ -51,4 +51,5 @@ Enum의 순서를 알고 싶을때는 Ordinal 사용이 아니라 인스턴스 �
 
 ### 결론
 
-Enum이 제공하는 Ordinal은 EnumSet, EnumMap에 사용할 목적으로 설계되었으므로 외에는 사용하지마라. (나는 실무에서 아직 본적이 없다.)
+Enum이 제공하는 Ordinal은 EnumSet, EnumMap에 사용할 목적으로 설계되었으므로 외에는 사용하지마라.  
+(나는 실무에서 아직 본적이 없다.)
