@@ -10,12 +10,10 @@ public static final int ORANGE_NAVEL = 0
 public static final int ORANGE_TEMPLE = 1;
 ```
 
-1. 타입 안정성과 표현력이 좋지 않다
-
+1. 타입 안정성과 표현력이 좋지 않다  
 APPLE_FUJI 나 ORANGE_TEMPLE 을 사용해도 둘다 정수 0이라 컴파일 문제 없고 ORANGE자리에 APPLE이 들어가도 모른다.
 
-1. 프로그램이 깨지기 쉬움 
-
+1. 프로그램이 깨지기 쉬움  
 상수의 값이 바뀌면 반드시 다시 컴파일 필요
 
 1. 정수 상수는 문자열로 출력하기 어려움
