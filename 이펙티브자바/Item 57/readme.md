@@ -76,16 +76,12 @@ public void calculate() {
 따라서 for 문안에서 선언된 반복 변수는 해당 for 문 밖에선 사용할 수 없게된다.  
 
 for문의 경우 for문에서 선언된 반복 변수를 for 문 바깥에서 사용할 경우 컴파일 타임에 잡아주기도 한다.  
-
 ![https://blog.kakaocdn.net/dn/ckrfgX/btqFdnnZG2T/c7tSSazW43zS8vhxuepVv0/img.png](https://blog.kakaocdn.net/dn/ckrfgX/btqFdnnZG2T/c7tSSazW43zS8vhxuepVv0/img.png)
+사용할 수 없다   
 
-사용할 수 없다  
-
-또한 for문의 변수 유효 범위가 for문 범위와 일치하기 때문에 똑같은 이름의 변수를 여러 반복문에서 사용하여도 서로 영향을 주지않는다.
-
+또한 for문의 변수 유효 범위가 for문 범위와 일치하기 때문에 똑같은 이름의 변수를 여러 반복문에서 사용하여도 서로 영향을 주지않는다.  
 ![https://blog.kakaocdn.net/dn/Ugn7D/btqFa6Vss85/sKthW6RpvdPJoJHJSWqMuK/img.png](https://blog.kakaocdn.net/dn/Ugn7D/btqFa6Vss85/sKthW6RpvdPJoJHJSWqMuK/img.png)
-
-영향을 주지않는다
+영향을 주지않는다  
 
 또 for문 관용구의 반복 변수를 여러개 선언하여 사용할 수 있다.
 
