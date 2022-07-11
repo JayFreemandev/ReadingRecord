@@ -12,7 +12,8 @@ remove 메소드를 호출해야하기 때문이다.
 
 ## foreach 문장을 사용하여 리스트 자체를 수정
 
-해야할 경우에는 ConcurrentModificationException이 발생한다. 순회중인 상태에서 자기 자신에 대한 데이터 변경이 불가하기 때문에 iterator를 사용할 수 밖에 없다.
+해야할 경우에는 ConcurrentModificationException이 발생한다.   
+순회중인 상태에서 자기 자신에 대한 데이터 변경이 불가하기 때문에 iterator를 사용할 수 밖에 없다.
 
 ```java
 // some list
