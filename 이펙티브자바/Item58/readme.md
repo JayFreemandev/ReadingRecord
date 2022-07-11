@@ -73,4 +73,5 @@ for (Iterator<Suit> i = suits.iterator(); i.hasNext(); ) {
 반복자의 `next` 메서드가 Suit를 탐색하는 루프 1회마다 불려야 하는데,   
 Rank를 탐색하는 루프가 수행될 때마다 불리고 있어서 결국 모든 숫자(Suit)를 탐색하게 되어 `NoSuchElementException`이 발생  
 
-위에서 살펴본 상황에 속하게 될 경우 일반적인 for 문을 사용해야하고 `for-each` 문은 컬렉션과 배열은 물론 `Iterable` 인터페이스를 구현한 객체라면 무엇이든 순회할 수 있다.
+위에서 살펴본 상황에 속하게 될 경우 일반적인 for 문을 사용해야하고 `for-each` 문은 컬렉션과   
+배열은 물론 `Iterable` 인터페이스를 구현한 객체라면 무엇이든 순회할 수 있다.
