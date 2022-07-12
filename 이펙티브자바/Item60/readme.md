@@ -56,13 +56,12 @@ float과 double의 연산은 정확하지 않다.
 ![Untitled](https://user-images.githubusercontent.com/72185011/178525511-f84f0d1f-cc26-4e92-91ef-ea7d36287517.png)
 
 
-불변 클래스이며 정수. 정수를 저장하는데 `BigInteger`를 사용 
-
-double이나 float으로 선어시 표현할 수 있는 값의 한계가 있기에 valueOf를 통해 바꿔주거나 string으로 표현
+불변 클래스이며 정수. 정수를 저장하는데 `BigInteger`를 사용   
+double이나 float으로 선어시 표현할 수 있는 값의 한계가 있기에 valueOf를 통해 바꿔주거나 string으로 표현  
 
 ![Untitled 1](https://user-images.githubusercontent.com/72185011/178525532-bbd7de6d-aee9-40e4-a429-e4f93c4bc506.png)
 
-인텔리제이에서는 String으로 변환하라고 경고해준다.
+인텔리제이에서는 String으로 변환하라고 경고해준다.  
 
 ```java
     void BigDecimal을_활용한_연산() {
@@ -73,9 +72,8 @@ double이나 float으로 선어시 표현할 수 있는 값의 한계가 있기�
     }
 ```
 
-double형 대신 BigDecimal 객체를 사용하면 실수의 연산을 오차 없이 수행할 수 있다.
-
-하지만 BigDecimal은 사용하기 번거롭고, 느리다.
+double형 대신 BigDecimal 객체를 사용하면 실수의 연산을 오차 없이 수행할 수 있다.  
+하지만 BigDecimal은 사용하기 번거롭고, 느리다.  
 
 ### **(2) 정수 타입을 이용**
 
