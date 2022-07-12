@@ -92,13 +92,10 @@ double형 대신 BigDecimal 객체를 사용하면 실수의 연산을 오차 �
 ![Untitled 2](https://user-images.githubusercontent.com/72185011/178525553-de0b5386-1c22-4f07-8528-913067baff71.png)
 
 
-오늘자 도지코인의 BTC 가격이다. 
-
-현재가 0.00000652의 의미는 도지코인 1개로 
-
-0.00000652개 만큼의 비트코인을 살 수 있다는 의미이다.
-
-현재가를 float이나 double로 구현했다면 무슨일이 일어날까?
+오늘자 도지코인의 BTC 가격이다.   
+현재가 0.00000652의 의미는 도지코인 1개로   
+0.00000652개 만큼의 비트코인을 살 수 있다는 의미이다.   
+현재가를 float이나 double로 구현했다면 무슨일이 일어날까?  
 
 ```java
 public class AppRunner implements ApplicationRunner {
