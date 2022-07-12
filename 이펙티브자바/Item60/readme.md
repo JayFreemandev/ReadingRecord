@@ -112,13 +112,12 @@ public class AppRunner implements ApplicationRunner {
 ![Untitled 3](https://user-images.githubusercontent.com/72185011/178525570-23af3331-3a7e-4453-82c7-2911083ee091.png)
 
 
-정확하지 않은 금액이 계산되어 나온다. 이와 같이 금액처럼 정확한 소수점을 계산이 필요할 때 float이나 double형을 쓰게 된다면 부정확한 결과가 나오고 정산시에 아주 큰 문제가 될 것임
+정확하지 않은 금액이 계산되어 나온다.   
+이와 같이 금액처럼 정확한 소수점을 계산이 필요할 때 float이나 double형을 쓰게 된다면 부정확한 결과가 나오고 정산시에 아주 큰 문제  
+그렇기 때문에 금액처럼 정확한 소수점을 계산할 때는 반드시 Big Decimal을 사용해야 한다.  
+정확한 계산을 제공하는 대신에 성능 손해는 감수해야한다.   
 
-그렇기 때문에 금액처럼 정확한 소수점을 계산할 때는 반드시 Big Decimal을 사용해야 한다.
-
-정확한 계산을 제공하는 대신에 성능 손해는 감수해야한다.
-
-float 100만번 더하기 vs BigDecimal 100만번 더하기
+float 100만번 더하기 vs BigDecimal 100만번 더하기  
 
 ```java
 float floatVal = 1.1f;
