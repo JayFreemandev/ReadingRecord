@@ -1,7 +1,3 @@
-# Item60, 정확한 답이 필요하다면 float와 double은 피하라 (1)
-
-Date: July 12, 2022
-
 # 상황에 따라 float 와 double은 피하라가 자연스러운 제목같다.
 
 ## **float과 double의 문제**
