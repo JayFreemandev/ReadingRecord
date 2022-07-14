@@ -75,7 +75,9 @@ public static void main(String[] args) {
 JIT Compiler의 Bytecode Caching, Opcode Optimization.. 등  
 즉 초기 호출 이후로는 캐싱을 통해서 Reflection API를 통한 메서드 호출도 최적화된다는 것을 의미한다.  
 초기 호출에서는 5배 이상의 차이를 보이더라도 이후 호출부터는 그러한 간격이 줄어들게 된다.   
-하지만 setAccessible과 같은 Class 정보 설정 기능을 사용하는 경우에는 그렇지 않을 수 있다.    -lob    
+하지만 setAccessible과 같은 Class 정보 설정 기능을 사용하는 경우에는 그렇지 않을 수 있다.     
+
+-lob 참조
 
 확신 없이 리플렉션이 필요한가 아닌가의 고민이 된다면, 필요없을 가능성이 크다.
 
