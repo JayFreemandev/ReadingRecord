@@ -6,10 +6,10 @@
 
 > Reflection is commonly used by programs which require the ability to **examine or modify the runtime behavior of applications running in the Java virtual machine.** This is a relatively advanced feature and should be used only by developers who have a strong grasp of the fundamentals of the language. With that caveat in mind, reflection is a powerful technique and can enable applications to perform operations which would otherwise be impossible.
 > 
--클래스의 생성자, 메서드, 필드에 해당하는 constructor, method, field 인스턴스를 가져올 수 있다.  
--클래스의 멤버 이름, 필드 타입, 메서드 시그니처 등을 가져올 수 있다.  
--위의 것들을 활용해서 실제로 인스턴스를 생성하거나, 메서드를 호출하거나, 필드에 접근할 수도 있다.  
--컴파일 당시에 존재하지 않던 클래스도 이용할 수 있다.  
+- 클래스의 생성자, 메서드, 필드에 해당하는 constructor, method, field 인스턴스를 가져올 수 있다.  
+- 클래스의 멤버 이름, 필드 타입, 메서드 시그니처 등을 가져올 수 있다.  
+- 위의 것들을 활용해서 실제로 인스턴스를 생성하거나, 메서드를 호출하거나, 필드에 접근할 수도 있다.  
+- 컴파일 당시에 존재하지 않던 클래스도 이용할 수 있다.  
 
 심화기능이라 언어에 대한 근본적인 이해도가 높은 개발자들만 사용해야한다라는 설명이 들어가있다.   
 그렇다면 두번째 특징중에 구체적인 클래스 타입을 몰라도 접근가능하다는게 무슨 의미일까?  
