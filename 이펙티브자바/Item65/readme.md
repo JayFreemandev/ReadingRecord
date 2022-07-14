@@ -66,6 +66,16 @@ public static void main(String[] args) {
     2. 컴파일타임의 예외 검사.
 2. 각종 오류 처리로 인해 로직을 보기 힘들며, 코드를 읽기가 힘들어진다.  
 3. 성능이 떨어진다.(책에 의하면 int 반환 메서드의 경우 일반 메서드에 비해 11배나 느렸다고 한다.)  
+4. 
+"Java Reflection API를 측정할때 invoke()로 실행 했을때 걸린 시간을 측정하게 되는데 이때 Reflection만 테스트하는 것이 아니라, 
+동적으로 Class를 Load 하고, Heap에 객체를 띄우는 과정또한 포함이 되어있다.  
+그렇다고 Reflection API가 느리지 않고, 동일한 비용을 사용한다는 것은 아니다.   
+그러한 이유 중 하나로는 Reflection을 통한 초기 호출 시 JVM이 해당 정보를 미리 최적화할 수 없기 때문이다.
+
+JIT Compiler의 Bytecode Caching, Opcode Optimization.. 등  
+즉 초기 호출 이후로는 캐싱을 통해서 Reflection API를 통한 메서드 호출도 최적화된다는 것을 의미한다.  
+초기 호출에서는 5배 이상의 차이를 보이더라도 이후 호출부터는 그러한 간격이 줄어들게 된다.   
+하지만 setAccessible과 같은 Class 정보 설정 기능을 사용하는 경우에는 그렇지 않을 수 있다.    -lob    
 
 확신 없이 리플렉션이 필요한가 아닌가의 고민이 된다면, 필요없을 가능성이 크다.
 
