@@ -54,7 +54,7 @@ StringBuilder와 StringBuffer는 **가변성(mutable)**을 가지고 있다.
 
 좋은 예시를 찾던 도중 김세윤님의 프로그래머스 문자열 문제가 있었다.
 
-![Untitled](Item63,%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B3%E1%86%AB%20StringBuilder%2013dd7cf9529b4bb6b1d96e388b5e4556/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/72185011/178927996-4a3cf694-8779-4fa4-b820-398676a914ae.png)
 
 문자열 연결로 return을 구해보면 
 
@@ -76,8 +76,8 @@ class Solution {
 ```
 
 Arrays.sort로 한번 정렬시키고 문자열을 사용하여 이어 붙였다.
+![Untitled 1](https://user-images.githubusercontent.com/72185011/178928019-9b632e84-7904-4775-bc74-51bde64dd35d.png)
 
-![Untitled](Item63,%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B3%E1%86%AB%20StringBuilder%2013dd7cf9529b4bb6b1d96e388b5e4556/Untitled%201.png)
 
 StringBuilder를 사용했을때
 
@@ -100,7 +100,7 @@ class Solution {
 
 얼마나 차이가 있을까?
 
-![Untitled](Item63,%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B3%E1%86%AB%20StringBuilder%2013dd7cf9529b4bb6b1d96e388b5e4556/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/72185011/178928033-6c7eae26-ccaa-4543-951e-672bb297bb43.png)
 
 약 두배 가까이 속도가 향상되었다. 
 
