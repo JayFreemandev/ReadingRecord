@@ -90,12 +90,11 @@
 
 **읽어볼거리**
 
-메서드 이름은 빌더와 조정자의 차이를 생각하고 지으면 더 좋은 이름이 나타날 수 있다.
-
+메서드 이름은 빌더와 조정자의 차이를 생각하고 지으면 더 좋은 이름이 나타날 수 있다.  
 ![Untitled](https://user-images.githubusercontent.com/72185011/178976963-f4a88bf4-d57a-4981-a5bd-3542a06cf11c.png)
+<br>
 
 ***엘레강트 오브젝트*** 
-
 ![Untitled 1](https://user-images.githubusercontent.com/72185011/178976974-88cccbff-d655-4e19-9493-18e87c074ea8.png)
 
 ```java
@@ -103,6 +102,7 @@
 int save(String content); // 새로운 객체를 반환하는 메서드(빌더)지만 동사로 지어져있음(조정자)
 void speed(String value); // 객체를 수정하는 메서드(조정자)지만 명사로 지어져있음(빌더)
 ```
+<br>
 
 ****좋은 객체의 7가지 덕목****
 
