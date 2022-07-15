@@ -65,6 +65,7 @@
     - isDigit, isEmpty, isEnabled
 - 반환 타입이 boolean이 아니거나 해당 인스턴스의 속성을 반환하는 메서드의 이름은 보통 명사, 명사구, get으로 시작하는 동사구로 짓는다.
     - size, hashCode, getTime
+<br>
 
 ### **특별한 메서드 이름**
 
