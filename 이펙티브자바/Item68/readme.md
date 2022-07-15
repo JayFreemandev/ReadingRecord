@@ -24,6 +24,7 @@
     - javax.persistence.*;
 - 많은 기능을 제공하는 경우 계층을 나눠 더 많은 요소로 구성해도 좋다.
     - java.util.concurrent.atomic
+<br>
 
 ### **클래스와 인터페이스**
 
@@ -31,6 +32,7 @@
     - List, FutherTask
 - 약자의 경우 첫 글자만 대문자로 하는 쪽이 훨씬 많다.
     - HttpUrl vs HTTPURL
+<br>
 
 ### **메서드와 필드**
 
