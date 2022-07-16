@@ -51,14 +51,9 @@
 **좋다**. 다시 말해서, **우리가 구현하는 비검사 throwble은 모두 RuntimeException의 하위 클래스여야한다.**  
 
 Error는 상속하지 말아야할 뿐 아니라,
-
-throw 문을 직접 던지는 일도 없어야한다.(AssertionError는 예외)
-
-**Exception, RuntimeException, Error를 상속하지 않은 throwble을 만들 수 있는데 이런, throwable은** 
-
-**이로울 게 없으니 절대 사용하지 말아라. 이런 throwable은 예외보다 나을 게 없으며 API 사용자를** 
-
-**헷갈리게 할 뿐이다.**
+throw 문을 직접 던지는 일도 없어야한다.(AssertionError는 예외)  
+**Exception, RuntimeException, Error를 상속하지 않은 throwble을 만들 수 있는데 이런, throwable은**      
+**이로울 게 없으니 절대 사용하지 말아라. 이런 throwable은 예외보다 나을 게 없으며 API 사용자를헷갈리게 할 뿐이다.**  
 
 **예외의 메소드**는 주로 그 **예외를 일으킨 상황에 관한 정보를 코드 형태로 전달**하는데 쓰인다. 그러
 
