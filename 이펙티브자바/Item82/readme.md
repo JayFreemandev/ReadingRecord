@@ -14,28 +14,33 @@
 - 메서드 선언에 synchronized 한정자를 선언하는것만으로 그 메서드가 스레드 안전하다고 믿기는 어렵다.
 - 멀티스레드 환경에서도 API를 안전하게 사용하게 하려면 클래스가 지원하는 스레드 안전성 수준을 정확히 명시해야 한다.
 - 다음 목록은 스레드 안전성이 높은 순으로 나열한 것으로, 완벽하진 않지만 일반적인 경우는 포괄한다
+<br>
 
 ### **불변(immutable)**
 
 - 이 클래스의 인스턴스는 마치 상수와 같아서 외부 동기화도 필요 없다.
 - ex) String, Long, BigInteger
+<br>
 
 ### **무조건적 스레드 안전(unconditionally thread-safe)**
 
 - 이 클래스의 인스턴스는 수정될 수 있으나, 내부에서 충실히 동기화하여 별도의 외부 동기화 없이 동시에 사용해도 안전하다.
 - AtomicLong, ConcurrentHashMap
 - Atomic
+<br>
 
 ### **조건부 스레드 안전(conditionally thread-safe)**
 
 - 무조건적 스레드 안전과 같으나, 일부 메서드는 동시에 사용하려면 외부 동기화가 필요하다.
 - Collections.synchronized 래퍼 메서드가 반환한 컬렉션들이 여기 속한다.
+<br>
 
 ### **스레드 안전하지 않음(not thread-safe)**
 
 - 이 클래스의 인스턴스는 수정될 수 있다.
 - 동시에 사용하려면 각각의 메서드 호출을 클라이언트가 선택한 외부 동기화 메커니즘으로 감싸야 한다.
 - ex) ArrayList, HashMap 같은 기본 컬렉션
+<br>
 
 ### **스레드 적대적(thread-hostile)**
 
@@ -62,6 +67,7 @@ public static int generateSerialNumber() {
 - 만약 두 번째 스레드가 위의 두 접근 사이를 비집고 들어와 값을 읽어가면 첫 번째 스레드와 똑같은 값을 돌려받게 된다.
 - 따라서 위 메서드에서 synchronized 한정자를 사용하면 이와 같은 문제가 해결된다.
 - 위 분류는 (스레드 적대적만 빼면) "자바 병렬 프로그래밍"의 부록A에 나오는 스레드 안전성 애너테이션(@Immutable, @ThreadSafe, @NotThreadSafe)과 대략 일치한다.
+<br>
 
 ## **정리**
 
