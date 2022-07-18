@@ -1,6 +1,6 @@
 ## 개인 공부용
 [![Version](https://img.shields.io/badge/version-2022.3.1-red.svg)](./CHANGELOG)  [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/JayFreemandev/TIL)](https://hits.seeyoufarm.com/)  
-> * 개인 학습을 위해 읽고 배운 내용을 정리하는 장소입니다. 
+> * 개인 학습을 위해 읽고 배운 내용을 정리하는 장소입니다.   
 > 기타 의견과 요청사항은 언제든지 환영합니다.     
 > 책의 저작권은 해당 작가와 출판사에게 존재합니다.    
 > 자세하고 정확한 개념을 공부하려면 책을 꼭 구매하셔서 읽어주세요.     
