@@ -132,13 +132,10 @@ void jsonSerializable() {
 
 ## **어떻게 객체에서 바이트 직렬화를 할까?**
 
-객체에 Serializable 이라는 인터페이스를 구현하면 된다.
-
-참고로 Serializable 은 안에 아무것도 선언되어있지 않습니다. 이를 마커 인터페이스라고 부른다.
-
-말 그대로 직렬화를 할 수 있는 객체라고 알려주는 것이다.
-
-그리고 나서 목적지까지 가는 바이트 스트림에 writeObject를 사용해준다.
+객체에 Serializable 이라는 인터페이스를 구현하면 된다.   
+참고로 Serializable 은 안에 아무것도 선언되어있지 않습니다. 이를 마커 인터페이스라고 부른다.           
+말 그대로 직렬화를 할 수 있는 객체라고 알려주는 것이다.          
+그리고 나서 목적지까지 가는 바이트 스트림에 writeObject를 사용해준다.           
 
 ```java
 @DisplayName("Serializable을 구현한 Person 객체 직렬화 테스트")
