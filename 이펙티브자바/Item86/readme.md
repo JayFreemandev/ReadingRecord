@@ -86,17 +86,17 @@ public class Member implements Serializable {
 }
 ```
 
-기존 직렬화된 Member 객체를 역직렬화 했을때 우리는 email 은 null 로 설정되고 나머지 필드들은 제대로 역직렬화 되는 것을 기대할 것이다.
-
-하지만 다음과 같은 오류를 만난다.
+기존 직렬화된 Member 객체를 역직렬화 했을때 우리는 email 은 null 로 설정되고 나머지 필드들은 제대로 역직렬화 되는 것을 기대할 것이다.  
+하지만 다음과 같은 오류를 만난다.  
 
 [https://camo.githubusercontent.com/40c4cce2f0c9df8db4589a51d9469f3e772a599c3a62a4bbccc6721658775927/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f3030386933736b4e677931677432637a69633466346a333137783037697767762e6a7067](https://camo.githubusercontent.com/40c4cce2f0c9df8db4589a51d9469f3e772a599c3a62a4bbccc6721658775927/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f3030386933736b4e677931677432637a69633466346a333137783037697767762e6a7067)
 
-해당 예외가 발생한 이유는 모든 직렬화된 클래스는 serialVersionUID 의 이름으로 고유 식별번호를 부여 받는다.
+해당 예외가 발생한 이유는 모든 직렬화된 클래스는 serialVersionUID 의 이름으로 고유 식별번호를 부여 받는다.  
+하지만 serialVersionUID 를 클래스내에 static fianl long 필드로 이번호를 명시하지 않으면   
+시스템이 런타임에 암호해시 함수(SHA-1) 을 적용해 자동으로 클래스 안에 생성한다.  
 
-하지만 serialVersionUID 를 클래스내에 static fianl long 필드로 이번호를 명시하지 않으면 시스템이 런타임에 암호해시 함수(SHA-1) 을 적용해 자동으로 클래스 안에 생성한다.
-
-그래서 나중에 클래스를 수정하게 된다면 serialVersionUID 값도 변하게된다. 따라서 serialVersionUID 을 꼭 명시 해주자.
+그래서 나중에 클래스를 수정하게 된다면 serialVersionUID 값도 변하게된다.  
+따라서 serialVersionUID 을 꼭 명시 해주자.  
 
 ```java
 public class Member implements Serializable {
