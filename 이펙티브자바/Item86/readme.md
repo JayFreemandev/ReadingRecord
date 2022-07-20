@@ -70,9 +70,8 @@ void deserializable() throws IOException, ClassNotFoundException {
 }
 ```
 
-현재까지 초기버전 릴리즈 상태에서는 행복하게 모든 테스트가 통과할 것이다.
-
-하지만 추 후 Member 클래스에 필드가 추가되거나 타입이 변경된다면 어떻게 될까?
+현재까지 초기버전 릴리즈 상태에서는 행복하게 모든 테스트가 통과할 것이다.  
+하지만 추 후 Member 클래스에 필드가 추가되거나 타입이 변경된다면 어떻게 될까?  
 
 ```java
 public class Member implements Serializable {
