@@ -184,13 +184,10 @@ public class Member implements Serializable {
 >  보통 Json 직렬화 형태로 변경하여 사용하는 것으로 보임  
 > 
 
-Serializable 을 반드시 구현해야 하는 다른 클래스의 컴포넌트로 쓰일 클래스도 마찬가지다.
-
-하지만 Serializable 구현에 따른 비용이 적지 않으니, 클래스를 설계 할때마다 그이득과 비용을 잘 저울질해야 한다.
-
-역사적으로 BigInteger 와 Instant 같은 '값' 클래스와 컬렉션 클래스들은 Serializable을 구현하고 스레드 풀처럼 '동작' 하는 객체를 표현하는 클래스 들은 대부분
-
-Serializable 을 구현하지 않았다.
+Serializable 을 반드시 구현해야 하는 다른 클래스의 컴포넌트로 쓰일 클래스도 마찬가지다.  
+하지만 Serializable 구현에 따른 비용이 적지 않으니, 클래스를 설계 할때마다 그이득과 비용을 잘 저울질해야 한다.  
+역사적으로 BigInteger 와 Instant 같은 '값' 클래스와 컬렉션 클래스들은 Serializable을 구현하고    
+스레드 풀처럼 '동작' 하는 객체를 표현하는 클래스 들은 대부분  Serializable 을 구현하지 않았다.  
 
 ## **상속용 클래스가 Serializable 을 지원하지 않는 경우**
 
