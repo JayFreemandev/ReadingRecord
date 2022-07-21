@@ -160,10 +160,8 @@ SUID는 직렬화와 역직렬화 과정에서 값이 서로 맞는지 확인한
 ## **참고**
 
 <순환참조가 걸려있는 객체의 경우 직렬화를 하면>
-
 [Does Java Serialization work for cyclic references?](https://stackoverflow.com/questions/1792501/does-java-serialization-work-for-cyclic-references)
-
-java의 기본 직렬화 구조는 순환 참조가 있는 클래스에서 **이미 직렬화 되어있는 클래스라면 직렬화 하지않는다**
+java의 기본 직렬화 구조는 순환 참조가 있는 클래스에서 **이미 직렬화 되어있는 클래스라면 직렬화 하지않는다**  
 
 ```java
 import java.io.*;
