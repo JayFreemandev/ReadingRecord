@@ -107,12 +107,15 @@ public final class StringList implements Serializable {
 클래스에서 transient 또는 static 키워드가 선언된 필드를 제외하고는 모두 직렬화 대상이 된다.  
 transient 키워드가 선언된 멤버 변수는 직렬화 대상에 제외되었기 때문에 자바 객체로 변환되는 역직렬화 결과에서도 값을 확인할 수 없다.  
 **writeObject 와 readObject 가 private 으로 기술되어 있다는 사실에 주목**해볼만 하다.  
+<br>
 
-다른 접근 지정자로 선언된 경우 호출되지 않는다. **private** 으로 선언되었다는 것은  
+다른 접근 지정자로 선언된 경우 호출되지 않는다. **private**으로 선언되었다는 것은  
 이 클래스를 상속한 서브 클래스에서 메서드를 **재정의(override)**를 하지 못하게 한다는 것이다.  
+<br>
 
 또한 다른 객체는 호출할 수 없기 때문에 클래스의 무결성이 유지되며 수퍼 클래스와 서브 클래스는 독립적으로 직렬화 방식을 유지하며 확장될 수 있다.   
 직렬화 과정에서는 **리플렉션(reflection)**을 통해 메서드를 호출하기 때문에 접근 지정자는 문제가 되지 않는다.  
+<br>
 
 defaultWriteObject() 와 defaultReadObject() 는 각각 기본 serialization 을 수행한다.  
 따라서 custom serialization 의 전후에 반드시 호출해줘야 한다.  
