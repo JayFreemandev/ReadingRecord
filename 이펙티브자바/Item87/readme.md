@@ -100,6 +100,7 @@ public final class StringList implements Serializable {
     // ... 생략
 }
 ```
+<br>
 
 **transient**
 
