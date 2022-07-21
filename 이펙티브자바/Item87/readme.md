@@ -131,6 +131,7 @@ public class SomeClass implements Serializable {
 ```
 
 이렇게 해야 향후 릴리즈에서 transient가 아닌 필드가 추가되더라도 상위와 하위 모두 호환이 가능하기 때문이다.
+<br>
 
 ## **SerialVersionUID**
 
