@@ -109,11 +109,11 @@ transient 키워드가 선언된 멤버 변수는 직렬화 대상에 제외되�
 다른 접근 지정자로 선언된 경우 호출되지 않는다. **private** 으로 선언되었다는 것은  
 이 클래스를 상속한 서브 클래스에서 메서드를 **재정의(override)**를 하지 못하게 한다는 것이다.  
 
-또한 다른 객체는 호출할 수 없기 때문에 클래스의 무결성이 유지되며 수퍼 클래스와 서브 클래스는 독립적으로 직렬화 방식을 유지하며 확장될 수 있다. 직렬화 과정에서는 **리플렉션(reflection)**을 통해 메서드를 호출하기 때문에 접근 지정자는 문제가 되지 않는다.
+또한 다른 객체는 호출할 수 없기 때문에 클래스의 무결성이 유지되며 수퍼 클래스와 서브 클래스는 독립적으로 직렬화 방식을 유지하며 확장될 수 있다.   
+직렬화 과정에서는 **리플렉션(reflection)**을 통해 메서드를 호출하기 때문에 접근 지정자는 문제가 되지 않는다.  
 
-defaultWriteObject() 와 defaultReadObject() 는 각각 기본 serialization 을 수행한다.
-
-따라서 custom serialization 의 전후에 반드시 호출해줘야 한다.
+defaultWriteObject() 와 defaultReadObject() 는 각각 기본 serialization 을 수행한다.  
+따라서 custom serialization 의 전후에 반드시 호출해줘야 한다.  
 
 ```java
 public class SomeClass implements Serializable {
