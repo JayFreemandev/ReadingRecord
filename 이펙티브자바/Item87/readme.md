@@ -7,8 +7,7 @@
 - 역직렬화시 반드시 예외가 생긴다는 것을 생각하고 개발합니다.
 - 자주 변경되는 비즈니스적인 데이터를 자바 직렬화을 사용하지 않습니다.
 - 긴 만료 시간을 가지는 데이터는 JSON 등 다른 포맷을 사용하여 저장합니다.
-
-
+<br>
 
 
 
@@ -29,6 +28,7 @@ public class Name implements Serializable {
     private final String middleName;
 }
 ```
+<br>
 
 ## **객체의 물리적 표현과 논리적 내용이 같은 다른 경우 문제점**
 
