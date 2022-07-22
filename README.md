@@ -54,7 +54,7 @@
 
 ### 행동양식 기타
 
-- [실용주의 프로그래머](https://book.naver.com/bookdb/book_detail.nhn?bid=7467119) - 앤드류 헌트, 데이비드 토머스
+- [실용주의 프로그래머(2022-July~)](https://book.naver.com/bookdb/book_detail.nhn?bid=7467119) - 앤드류 헌트, 데이비드 토머스
 - [익스트림 프로그래밍](https://book.naver.com/bookdb/book_detail.nhn?bid=2497945) - 켄트 벡, 신시아 안드레스
 - [해커와 화가](https://book.naver.com/bookdb/book_detail.nhn?bid=7399482) - 폴 그레이엄
 - [CODE | 하드웨어와 소프트웨어에 숨어 있는 언어](https://book.naver.com/bookdb/book_detail.nhn?bid=8779469) - 찰스 펫졸드
