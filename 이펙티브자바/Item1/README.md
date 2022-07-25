@@ -8,13 +8,13 @@
 Champion Trunder = new Chanpion("Trunder", "Jungle"); // public constructor
 ```
 
-하지만 기본 생성자에는 이름을 지을수없어서 생성자 안에 추가적인 로직이 있을때 직접 생성자 안까지 들어가서 확인을 하여야한다. 
-
-이때 정적 팩토리 메소드를 사용하면 생성자를 통해 객체를 생성하는 것이 아닌 메소드를 통하여 객체를 생성시킨다.
+하지만 기본 생성자에는 이름을 지을수없어서 생성자 안에 추가적인 로직이 있을때 직접 생성자 안까지 들어가서 확인을 하여야한다.   
+이때 정적 팩토리 메소드를 사용하면 생성자를 통해 객체를 생성하는 것이 아닌 메소드를 통하여 객체를 생성시킨다.  
 
 ```java
 Champion Trunder = Chapion.DefaultJungleLine("Trunder"); // static factory method 
 ```
+<br>
 
 # 장점은 무엇인가
 
