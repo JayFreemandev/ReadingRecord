@@ -188,5 +188,6 @@ public class Person {
         - Thermometer.newInstance(TemperatureScale.CELSIUS)
         - 훨씬 읽기가 좋아졌다.
         
+<br>
 
 #### 그림 및 설명 출저 (김보배)
