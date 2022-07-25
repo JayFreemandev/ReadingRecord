@@ -40,6 +40,7 @@ public static final <T> List<T> emptyList() {
     return (List<T>) EMPTY_LIST;
 }
 ```
+<br>
 
 ### **배열은?**
 
