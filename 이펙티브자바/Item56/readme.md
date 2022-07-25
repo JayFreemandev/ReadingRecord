@@ -45,5 +45,6 @@ public @interface ExceptionTest {
     Class<? extends Throwable> valueO;
 }
 ```
+<br>
 
 현재 업무중에는 메소드와 인터페이스, 클래스와 필드까지는 문서화를 남기고있다. 구현체 경우는 남겨두는편이다 인터페이스에 잘 문서화 해두니 바로 찾아가기가 쉽고 덜 지저분해보였다.
