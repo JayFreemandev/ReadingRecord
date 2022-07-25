@@ -171,6 +171,7 @@ public class Person {
     - TreeMap, ConcurrentHashMap 등 어떠한 Map 구현체던지 간에 해당 메서드를 활용할 수 있게 된다.
 
 ---
+<br>
 
 ## **boolean보다는 원소 2개짜리 열거 타입이 낫다**
 
