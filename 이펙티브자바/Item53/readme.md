@@ -129,6 +129,7 @@ public static <E extends Enum<E>> EnumSet<E> of(E first, E... rest) {
     return result;
 }
 ```
+<br>
 
 ## **결론**
 
