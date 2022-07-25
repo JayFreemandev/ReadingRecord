@@ -59,6 +59,7 @@ public Integer[] getEmtpy() {
 ```java
 return list.toArray(new Integer[list.size()];
 ```
+<br>
 
 ## **결론**
 
