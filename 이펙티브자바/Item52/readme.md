@@ -91,6 +91,7 @@ for (동물 animal : animals) {
     - ex) ArrayList의 인자가 1개인 생성자는 ArrayList(int initialCapacity)와 ArrayList(Collection<? extends E> c)가 있지만 int와 Collection은 근본적으로 다르므로 괜찮다
 
 ---
+<br>
 
 **하지만 매개변수가 근본적으로 달라도 항상 안전하진 않다**
 
