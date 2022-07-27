@@ -37,7 +37,8 @@ Collections.sort(word,(s1,s2)->Integer.compare(s1.length(),s2.length()));
 
 #추가 정보#
 
-compare()경우 Compatator 인터페이스를 구현할때 사용하는 메소드인데 2개의 인자를 넘겨서 내부 구현에 다라 int 결과 값을 리턴하게된다. compare경우는 int비교지만 compareTo라고 문자열을 사전 순으로 비교하는 메소드도 존재한다. 
+compare()경우 Compatator 인터페이스를 구현할때 사용하는 메소드인데 2개의 인자를 넘겨서 내부 구현에 다라 int 결과 값을 리턴하게된다.  
+compare경우는 int비교지만 compareTo라고 문자열을 사전 순으로 비교하는 메소드도 존재한다.   
 
 ```java
 **compareTo 문자열 비교 메소드** 
