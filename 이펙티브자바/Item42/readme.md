@@ -71,11 +71,9 @@ void compileError(){
 
 ---
 
-## **열거타입에서의 람다사용**
-
-상수마다 메서드의 행동을 다르게 해야하는 경우
-
-상수별 메서드 구현(constant-specific method implementation)을 했었다.(Item34)
+## **열거타입에서의 람다사용**   
+상수마다 메서드의 행동을 다르게 해야하는 경우  
+상수별 메서드 구현(constant-specific method implementation)을 했었다.(Item34)  
 
 ```java
 public enum CARD {
