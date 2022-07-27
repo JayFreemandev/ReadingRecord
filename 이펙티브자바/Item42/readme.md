@@ -30,7 +30,7 @@ void anonymousClass() {
 
 ![https://user-images.githubusercontent.com/64793712/108632944-cc923000-74b4-11eb-8f82-a0bfa0bca906.png](https://user-images.githubusercontent.com/64793712/108632944-cc923000-74b4-11eb-8f82-a0bfa0bca906.png)
 <br>
-
+  
 위에서 사용하던 익명클래스 방식을 람다표현식으로 다음과 같이 간결하게 표현 할 수 있다.
 
 ```java
@@ -68,11 +68,13 @@ void compileError(){
   Collections.sort(word,(s1, s2) -> Integer.compare(s1.length(),s2.length()));
 }
 ```
-
+<br>
+  
 해당 코드에서 s1, s2 의 타입 추론 할 수 없음으로 String 의 length()를 호출할수 없다.
 
 ---
-
+<br>
+  
 ## **열거타입에서의 람다사용**   
 상수마다 메서드의 행동을 다르게 해야하는 경우  
 상수별 메서드 구현(constant-specific method implementation)을 했었다.(Item34)  
@@ -101,7 +103,8 @@ public enum CARD {
   abstract int point(int money);
 }
 ```
-
+<br>
+  
 해당 방식으로 구현하는 것보다 **함수객체(람다)를 인스턴스 필드에 저장**해서 보기 편한 코드로 변경해보자.
 
 ```java
@@ -126,10 +129,10 @@ public enum CARD {
   }
 }
 ```
-
-람다 방식으로 구현하면 코드가 매우 깔끔해진다.
-
-그렇다고 해서 상수 별 메서드 구현 방식을 쓰지 않는것은 아니다.
+<br>
+  
+람다 방식으로 구현하면 코드가 매우 깔끔해진다.  
+그렇다고 해서 상수 별 메서드 구현 방식을 쓰지 않는것은 아니다.  
 
 **상수 별 메서드 구현 방식을 사용하는 상황**
 
@@ -142,7 +145,8 @@ public enum CARD {
     
 
 ---
-
+<br>
+  
 ## **람다가 대체 할 수 없는 곳**
 
 1. 추상 클래스의 인스턴스를 만들 때 람다사용은 불가능하다.
@@ -174,7 +178,8 @@ public enum CARD {
     
 
 ---
-
+<br>
+  
 ## **주의사항**  
 람다도 익명 클래스처럼 직렬화 형태가 구현별로(가상 머신 별로) 다를 수 있다.  
 따라서 람다를 직렬화 하는 일은 극히 삼가야 한다.(익명 클래스의 인스턴스도 마찬가지다)  
