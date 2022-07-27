@@ -29,12 +29,14 @@ void anonymousClass() {
 하지만 자바 8 이후부터 **인터페이스 내에 추상메서드가 단 하나만** 존재하면 람다식을 사용할수 있게 되었다.
 
 ![https://user-images.githubusercontent.com/64793712/108632944-cc923000-74b4-11eb-8f82-a0bfa0bca906.png](https://user-images.githubusercontent.com/64793712/108632944-cc923000-74b4-11eb-8f82-a0bfa0bca906.png)
+<br>
 
 위에서 사용하던 익명클래스 방식을 람다표현식으로 다음과 같이 간결하게 표현 할 수 있다.
 
 ```java
 Collections.sort(word,(s1,s2)->Integer.compare(s1.length(),s2.length()));
 ```
+<br>
 
 #추가 정보#  
 compare()경우 Compatator 인터페이스를 구현할때 사용하는 메소드인데 2개의 인자를 넘겨서 내부 구현에 다라 int 결과 값을 리턴하게된다.  
