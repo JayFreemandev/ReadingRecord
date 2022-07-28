@@ -70,7 +70,8 @@ List<Person> onlyKim = people.stream()
         .filter(person -> person.getName().startsWith("김"))
         .collect(toList());
 ```
-
+<br>
+  
 여기에서 person -> person.getName().startsWith("김") 에 해당하는 로직을 분리하고, 메서드 참조를 이용하면 더 간결하게 나타낼 수 있다.
 
 ```java
