@@ -91,7 +91,7 @@ List<Person> onlyKim = people.stream()
     - public class SoLooooooooongName { public void function() { //람다 방식 execute(() -> action()); //메서드 참조 방식 execute(SoLooooooooongName::action); } private void execute(Supplier<?> supplier) { ... } public static Object action() { ... }
     }
 - Function.identity() 보다는 (x -> x)가 더 짧고 명확하다
-- 
+
 
 참고로, 메서드 참조 유형은 5가지가 있다.
 
