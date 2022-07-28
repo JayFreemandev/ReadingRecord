@@ -42,9 +42,10 @@ for (Person person : people) {
 }
 //counts = {이OO=1, 최OO=1, 김OO=2}
 ```
+<br>  
+  
 
 이번에는 김씨만 모으고 싶다고 하자.
-
 먼저 익명 클래스 방식을 보자.
 
 ```java
