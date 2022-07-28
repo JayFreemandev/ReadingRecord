@@ -96,6 +96,8 @@ List<Person> onlyKim = people.stream()
 참고로, 메서드 참조 유형은 5가지가 있다.
 
 [메서드 참조 유형은 5가지](https://www.notion.so/4dc2c99f73d74fcda247e168cef8c2eb)
+![image](https://user-images.githubusercontent.com/72185011/181590104-47705580-bfef-44cc-a885-147072f27668.png)
+
 
 ### **결론**
 
