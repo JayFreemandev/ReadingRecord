@@ -28,7 +28,9 @@ for (Person person : people) {
 //counts = {이OO=1, 최OO=1, 김OO=2}
 ```
 
-하지만 existingValue나 providedValue 는 크게 하는 일 없이 공간을 많이 차지한다.
+하지만 existingValue나 providedValue 는 크게 하는 일 없이 공간을 많이 차지한다.  
+<br>
+  
 
 메서드 참조 방식으로 더욱 간결하게 나타낼 수 있다.
 
