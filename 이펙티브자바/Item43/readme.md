@@ -105,4 +105,4 @@ List<Person> onlyKim = people.stream()
 가독성을 위해 람다 대신 메서드 참조 방식을 사용하자. 
 하지만 람다 방식이 더 가독성이 좋다면 람다 방식을 쓰자. 
 
-reference 황준호, 이펙티브 자바 참고
+##### reference 황준호, 이펙티브 자바 참고
