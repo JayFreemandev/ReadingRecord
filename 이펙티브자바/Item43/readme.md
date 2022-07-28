@@ -1,39 +1,79 @@
-아이템 43. 람다보다는 메서드 참조를 사용하라
-자바는 함수 객체를 람다 보다 더 간결하게 생성하는 방법을 제공한다. **바로 메서드 참조(method reference)**가 그것이다.
+# Item43, 람다보다는 메소드 참조를
 
-아래 코드는 Map 타입 객체에 첫 번째 인자인 key(여기서는 숫자 1)를 매핑한다.
-key가 Map에 존재한다면 두 번째 인자인 value(여기서는 2)와 기존의 key에 매핑되는 value(여기서는 1)를 합한다.
-존재하지 않는다면, 새롭게 key, value 쌍을 추가한다.
-Map<Integer, Integer> map = new HashMap<>();
-map.put(1, 1);
-map.put(3, 5);
-map.put(5, 8);
+## 
 
-map.merge(1, 2, (count, incr) -> count + incr); // {1=3, 3=5, 5=8}
-map.merge(2, 1, (count, incr) -> count + incr); //{1=3, 2=1, 3=5, 5=8}
-위 코드에서 처럼 람다는 보일러플레이트(boilerplate)가 존재한다.
+### **아이템43. 람다보다는 메서드 참조를 사용하라**
 
-파라미터인 count와 incr 는 많은 공간을 차지한다.
+Person person1 = new Person("김OO");
+Person person2 = new Person("이OO");
+Person person3 = new Person("김OO");
+Person person4 = new Person("최OO");
 
-위 더하기 함수식은 자바 8 이후부터 int의 박싱 타입인 Integer의 정적 메서드인 sum을 쓰는 것과 동일하다.
+List<Person> people = Arrays.asList(person1, person2, person3, person4);
 
-이것을 메서드 참조를 이용하여 간결하게 바꾸어보자
+위 코드와 같이 여러 사람들이 있을때, 각 이름의 사람 수를 나타내는 Map을 구하고 싶다고 하자.
 
-map.merge(1, 2, Integer::sum);		
-무조건 메서드 참조가 좋은건 아니다. 어떤 람다에서는 파라미터 이름이 곧 _문서_이기도 하다.
+그럼 다음과 같이 구현할 수 있다.
 
-따라서, 람다가 메서드 참조보다 더 길어도, 유지보수나 가독성면에서 도움이 될 수도 있다.
+//람다 방식
+Map<String, Integer> counts = new HashMap<>();
+for (Person person : people) {
+    counts.merge(person.getName(), 1, (existingValue, providedValue) -> existingValue + providedValue);
+}
+//counts = {이OO=1, 최OO=1, 김OO=2}
 
-메서드 참조는 주로 정적 메서드를 사용하지만, 그외에도 4가지 종류의 메서드 참조가 있다.
+하지만 existingValue나 providedValue 는 크게 하는 일 없이 공간을 많이 차지한다.
 
-메서드 레퍼런스 타입	예제	동일한 표현식을 람다로 바꾸면?
-정적(Static)	Integer::parseInt	str -> Integer.parseInt(str)
-바운드(Bound)	Instant.now()::isAfter	Instant then = Instant.now(); t -> then.isAfter(t);
-언바운드(UnBound)	String::toLowerCase	str -> str.toLowerCase();
-클래스 생성자	TreeMap<K,V>::new	() -> new TreeMap<K,V>();
-배열 생성자	int[]::new	len -> new int[len];
-요약하자면, 메서드 참조는 람다보다 더 간결하다.
+메서드 참조 방식으로 더욱 간결하게 나타낼 수 있다.
 
-메서드 참조를 사용할 때 코드가 더 명확하고 짧아진다면, 메서드 참조를 사용하라
+//메서드 참조 방식
+Map<String, Integer> counts = new HashMap<>();
+for (Person person : people) {
+    counts.merge(person.getName(), 1, Integer::sum);
+}
+//counts = {이OO=1, 최OO=1, 김OO=2}
 
-그게 아니라면, 람다식을 사용하라.
+이번에는 김씨만 모으고 싶다고 하자.
+
+먼저 익명 클래스 방식을 보자.
+
+//익명 클래스 방식
+List<Person> onlyKim = people.stream()
+        .filter(new Predicate<Person>() {
+            @Override
+            public boolean test(Person person) {
+                return person.getName().startsWith("김");
+            }
+        })
+        .collect(toList());
+
+아래와 같이 람다를 이용하면 더 간결하게 나타낼 수 있다.
+
+//람다 방식
+List<Person> onlyKim = people.stream()
+        .filter(person -> person.getName().startsWith("김"))
+        .collect(toList());
+
+여기에서 person -> person.getName().startsWith("김") 에 해당하는 로직을 분리하고, 메서드 참조를 이용하면 더 간결하게 나타낼 수 있다.
+
+//메서드 참조 방식
+List<Person> onlyKim = people.stream()
+        .filter(Person::isLastNameKim)
+        .collect(toList());
+
+이처럼 기능을 잘 드러내는 메서드명을 지어주면 가독성이 더 좋아진다.
+
+그렇다고 해서 메서드 참조 방식이 람다 방식보다 무조건 나은 건 아니다. 다음의 경우엔 람다 방식이 더 가독성이 좋을 수 있다.
+
+- 메서드와 람다가 같은 클래스 안에 있을때
+    - public class SoLooooooooongName { public void function() { //람다 방식 execute(() -> action()); //메서드 참조 방식 execute(SoLooooooooongName::action); } private void execute(Supplier<?> supplier) { ... } public static Object action() { ... }
+    }
+- Function.identity() 보다는 (x -> x)가 더 짧고 명확하다
+
+참고로, 메서드 참조 유형은 5가지가 있다.
+
+[Untitled](https://www.notion.so/4dc2c99f73d74fcda247e168cef8c2eb)
+
+### **결론**
+
+가독성을 위해 람다 대신 메서드 참조 방식을 사용하자. 하지만 람다 방식이 더 가독성이 좋다면 람다 방식을 쓰자.
