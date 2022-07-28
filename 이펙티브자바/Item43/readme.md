@@ -59,7 +59,9 @@ List<Person> onlyKim = people.stream()
         })
         .collect(toList());
 ```
+<br>
 
+  
 아래와 같이 람다를 이용하면 더 간결하게 나타낼 수 있다.
 
 ```java
