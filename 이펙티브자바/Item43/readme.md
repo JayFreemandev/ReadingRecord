@@ -1,9 +1,6 @@
 # Item43, 람다보다는 메소드 참조를
 # Item43, 람다보다는 메소드 참조를
 
-## 
-
-### **아이템43. 람다보다는 메서드 참조를 사용하라**
 
 Person person1 = new Person("김OO");
 Person person2 = new Person("이OO");
