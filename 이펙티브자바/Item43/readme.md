@@ -14,6 +14,7 @@ List<Person> people = Arrays.asList(person1, person2, person3, person4);
 ```
 
 위 코드와 같이 여러 사람들이 있을때, 각 이름의 사람 수를 나타내는 Map을 구하고 싶다고 하자.
+<br>
 
 그럼 다음과 같이 구현할 수 있다.
 
